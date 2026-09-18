@@ -1,0 +1,27 @@
+# ================================
+# Gradle build files and cache
+# ================================
+.gradle
+build
+
+# ================================
+# IDE, OS and log files
+# ================================
+.vscode
+.idea
+.DS_Store
+*.iml
+*.log
+
+# ================================
+# Version control & CI files
+# ================================
+.git
+.gitignore
+
+# ================================
+# Docker & local orchestration
+# ================================
+Dockerfile
+.dockerignore
+docker-compose.yml
