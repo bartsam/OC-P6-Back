@@ -140,7 +140,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: >
           npx --package semantic-release@25
-          --package conventional-changelog-conventionalcommits
           --package @semantic-release/changelog
           --package @semantic-release/exec
           --package @semantic-release/git
