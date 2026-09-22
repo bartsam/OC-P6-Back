@@ -157,9 +157,11 @@ jobs:
         if: ${{ steps.semantic_release.outputs.version != '' }}
         env:
           VERSION: ${{ steps.semantic_release.outputs.version }}
-          SOURCE_IMAGE: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:main-${{ github.sha }}
-          TARGET_IMAGE: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
         run: |
+          image_name="${IMAGE_NAME,,}"
+          source_image="${REGISTRY}/${image_name}:main-${GITHUB_SHA}"
+          target_image="${REGISTRY}/${image_name}:${VERSION}"
+
           docker pull "$SOURCE_IMAGE"
           docker tag "$SOURCE_IMAGE" "$TARGET_IMAGE:$VERSION"
           docker push "$TARGET_IMAGE:$VERSION"
