@@ -162,6 +162,6 @@ jobs:
           source_image="${REGISTRY}/${image_name}:main-${GITHUB_SHA}"
           target_image="${REGISTRY}/${image_name}:${VERSION}"
 
-          docker pull "$SOURCE_IMAGE"
-          docker tag "$SOURCE_IMAGE" "$TARGET_IMAGE:$VERSION"
-          docker push "$TARGET_IMAGE:$VERSION"
+          docker pull "$source_image"
+          docker tag "$source_image" "$target_image"
+          docker push "$target_image"
